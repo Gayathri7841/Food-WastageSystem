@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/logo.png" type="image/png">
+    <title>Food Wastage System</title>
+    <link rel="stylesheet" href="Login.css" />
+    <link rel="stylesheet" href="blurt.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  </head>
+
+  <script>
+    window.onload = function () {
+        Validate2();
+        DuplicateAccountValidation();
+    }
+  </script>
+
+  <body>
+    <main>
+      <div class="box">
+        <div class="inner-box">
+          <div class="forms-wrap">
+            <!-- Donor Login Form -->
+            <form method="post" th:action="@{/RecipientLoginVerification}" autocomplete="off" class="sign-in-form">
+              <div class="logo">
+                <img src="images/logo.png" alt="easyclass" />
+                <h4>Say No to Food Wastage</h4>
+              </div>
+
+              <div>
+                <p class="text">
+                  <a th:href="@{/showLoginForm}"><b>Donar &nbsp;</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a th:href="@{/showAdminLogin}"><b>Admin &nbsp;</b></a>
+                </p>
+              </div>
+
+              <div class="heading">
+                <h2><small>Welcome Agent,</small></h2>
+                <h6>Not registered yet?</h6>
+                <a href="#" class="toggle">Sign up</a>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input type="text" id="email" name="recipientemail" class="input-field"  required />
+                  <label>E-mail or Mobile No</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input type="password" id="password" name="recipientpassword" class="input-field"  required />
+                  <label>Password</label>
+                  <span class="bi bi-eye-slash" id="togglePassword"></span>
+                </div>
+
+                <input type="submit" value="Sign In" class="sign-btn" />
+                
+                <p class="text">
+                  Forgotten your password or your login details?
+                  <a th:href="@{/showLoginForm}">Get help</a> signing in
+                </p>
+              </div>
+            </form>
+
+            <!-- Recipient Registration Form -->
+            <form th:action="@{/RecipientRegistration}" autocomplete="off" class="sign-up-form" method="post" id="donarreg">
+              <div class="logo">
+                <img src="images/logo.png" alt="easyclass" />
+                <h4>Say No to Food wastage</h4>
+              </div>
+
+              <div class="heading">
+                <h2><small>Get Started</small></h2>
+                <h6>Already have an account?</h6>
+                <a :href="#" class="toggle">Sign in</a>
+              </div>
+              <br>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    id="name" 
+                    name="name"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Full Name</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="email"
+                    id="email" 
+                    name="email"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Email</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="tel"
+                    id="contactno" 
+                    name="contactno"
+                    class="input-field"
+                    autocomplete="off"
+                    pattern="[789][0-9]{9}"
+                    required
+                  />
+                  <label for="contactno">10 digits of Mobile No</label>
+                </div>
+
+
+
+
+
+
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    minlength="4"
+                   id="password" 
+                   name="password"
+                    
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Password</label>
+                </div>
+
+                 
+                <input type="submit" value="Sign Up" class="sign-btn" onclick="return Validate()" />
+
+                <p class="text">
+                  By signing up, I agree to the
+                  <a href="#">Terms of Services</a> and
+                  <a href="#">Privacy Policy</a>
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <div class="carousel">
+            <div class="images-wrapper">
+              <img src="images/image1.png" class="image img-1 show" alt="" />
+              <img src="images/image2.jpg" class="image img-2" alt="" />
+              <img src="images/image3.jpg" class="image img-3" alt="" />
+            </div>
+
+            <div class="text-slider">
+              <div class="text-wrap">
+                <div class="text-group">
+                  <h2>We see the <b>NEED</b>, not the cause</h2>
+                  <h2>We <b>RISE</b> by lifting others.</h2>
+                  <h2>Let's Be The <b>CHANGE</b></h2>
+                </div>
+              </div>
+
+              <div class="bullets">
+                <span class="active" data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+      function Validate() {
+          var password = document.getElementById("password").value;
+          var confirmPassword = document.getElementById("repassword").value;
+          if (password !== confirmPassword) {
+              blurt('Error', 'Passwords do NOT match', 'error');
+              return false;
+          }
+          return true;
+      }
+    </script>
+
+    <script type="text/javascript">
+      function Validate2() {
+        var a = '${msg}';
+        if (a === "Incorrect Credentials") {
+            blurt('Invalid Credentials', 'Verify your credentials and try again.', 'error');
+        }
+      }
+    </script>
+
+    <script type="text/javascript">
+      function DuplicateAccountValidation() {
+        var a = '${duplicateerror}';
+        if (a === "Duplicate Account") {
+            blurt({
+                title: 'Duplicate Account',
+                text: 'Donar Account already exists with the same Email-Id or Contact No.',
+                type: 'error',
+                okButtonText: 'Login',
+            });
+        }
+      }
+    </script>
+
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            this.classList.toggle("bi-eye");
+        });
+    </script>
+
+    <script src="blurt.min.js"></script>
+    <script src="Login.js"></script>
+  </body>
+</html>

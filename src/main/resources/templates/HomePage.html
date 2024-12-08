@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Wastage System</title>
+    <link rel="stylesheet" href="HomePage.css">
+    <script src="HomePage.js" defer></script>
+    <style>
+        /* Optional: Smooth scrolling for better user experience */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header class="Homepageheader">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <p class="navbar-brand">Food Wastage Management System</p>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about-section">About</a></li> <!-- Updated About Link -->
+                    <li><a href="#team-section">Team</a></li> <!-- Updated Team Link -->
+                    <li><a th:href="@{/showLoginForm}">Login/Register</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="/images/HomePageImg1.png" alt="Slide 3">
+            </div>
+            <div class="carousel-overlay">
+                <h1>Waste No More</h1>
+                <p>Transforming waste into resources</p>
+                <button class="view-services-btn">View Services</button>
+            </div>
+        </div>
+        
+        <!-- About Section -->
+        <div id="about-section" class="about-section">
+            <h1>About Us </h1>
+            <p>The Food Wastage Management System is a web-based solution designed to tackle the growing problem of food waste in various sectors such as restaurants, supermarkets, households, and food banks. The system aims to minimize food waste by tracking surplus food, managing inventory, and facilitating donations or redistribution to people in need.</p>
+            <p>This project is aimed at helping users reduce food wastage, save costs, and contribute to a more sustainable and socially responsible food ecosystem. It also aligns with global sustainability goals, including reducing hunger and minimizing food-related carbon footprints.</p>
+        </div>
+        
+        
+         <div class="waste-section">
+            <div class="waste-text">
+                <h2>Waste not, want not</h2>
+                <p><strong>Innovative food waste solutions</strong></p>
+                <p>In Vijayawada, Our Team is leading the charge against food wastage. We implement effective food wastage management systems that help businesses and households reduce their impact on the environment. Our innovative solutions ensure that surplus food is redirected to those in need, while also promoting sustainable practices. Join us in making a difference and turn waste into valuable resources for our community.</p>
+            </div>
+            <div class="waste-image">
+                <img src="/images/HomePageImg2.png" alt="Food Waste Solutions">
+            </div>
+        </div>
+        <!-- Team Section -->
+        <h2 id="team-section" style="text-align:center">Our Team</h2>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    
+                    <div class="container">
+                        <h2>Perugu Vyshnavi</h2>
+                        <p class="title">CEO & Founder</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>jane@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+             <div class="column">
+                <div class="card">
+                  
+                    <div class="container">
+                        <h2>Gayathri Boina</h2>
+                        <p class="title">Art Director</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>mike@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                   
+                    <div class="container">
+                        <h2>Satwika</h2>
+                        <p class="title">Designer</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>john@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Get in Touch Section -->
+<div id="contact-section" class="contact-section">
+    <h2>Get in Touch</h2>
+    <p>Connect with us for solutions</p>
+    <form action="#" method="POST" class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <label>
+            <input type="checkbox" name="allow" required>
+            I allow this website to store my submission so they can respond to my inquiry.
+        </label>
+
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</div>
+        <!-- Footer Section -->
+<footer id="footer" class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a> |
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+</footer>
+        
+    </header>
+</body>
+</html>

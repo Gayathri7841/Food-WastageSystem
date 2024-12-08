@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Home</title>
+    <link rel="stylesheet" href="RecipientHome.css"> <!-- Link to your CSS file -->
+    <script src="RecipientHome.js" defer></script> <!-- Link to your JS file -->
+</head>
+<body>
+  <div class="dashboard">
+    <nav class="navbar">
+    <h2>Food Wastage</h2>
+    <ul>
+        <li>
+            <a th:href="@{/notifications(recipientId=${recipientId})}">View Notifications</a>
+        </li>
+        <li>
+            <a th:href="@{/history(recipientId=${recipientId})}">History</a>
+        </li>
+        <li>
+            <a th:href="@{/logout}">Logout</a>
+        </li>
+    </ul>
+</nav>
+    
+
+    <main class="content">
+        <h1>Hello, <span th:text="${name}">Geethika</span>!</h1>
+        <section class="profile">
+            <h2>Your Profile</h2>
+            <table class="profile-table">
+                <tr>
+                    <th>Name</th>
+                    <td><span th:text="${name}">Name Placeholder</span></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><span th:text="${email}">Email Placeholder</span></td>
+                </tr>
+                <tr>
+                    <th>Contact Number</th>
+                    <td><span th:text="${contactno}">Contact Placeholder</span></td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Display notifications -->
+        
+    </main>
+  </div>
+</body>
+</html>

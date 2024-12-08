@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Your Donations</title>
+     <link rel="stylesheet" href="viewDonarsDonations.css">
+</head>
+<body>
+    <h1>Donations Made by You</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Donation ID</th>
+                <th>Full Name</th>
+                <th>Contact No</th>
+                <th>Pickup Time</th>
+                <th>Pickup Location</th>
+                <th>Branch</th>`
+                <th>Donation Category</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="donation : ${donations}">
+                <td th:text="${donation.id}"></td>
+                <td th:text="${donation.fullname}"></td>
+                <td th:text="${donation.contactno}"></td>
+                <td th:text="${donation.pickuptime}"></td>
+                <td th:text="${donation.pickuplocation}"></td>
+                <td th:text="${donation.branch}"></td>
+                <td th:text="${donation.donationcategory}"></td>
+                <td th:text="${donation.status}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/showDonationForm}">Make a New Donation</a>
+</body>
+</html>

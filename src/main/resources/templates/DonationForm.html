@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Donation Form</title>
+    <link rel="stylesheet" href="DonationForm.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h2>Donation Form</h2>
+        
+        <form action="#" th:action="@{/Donations}" th:object="${donations}" method="post">
+            <!-- Full Name -->
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" th:field="*{fullname}" required /><br><br>
+
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" th:field="*{email}" required /><br><br>
+
+            <!-- Phone Number -->
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" th:field="*{contactno}" required /><br><br>
+
+            <!-- Pickup Time -->
+            <label for="pickupTime">Pickup Time:</label>
+            <input type="time" id="pickupTime" th:field="*{pickuptime}" required /><br><br>
+
+            <!-- Pickup Location -->
+            <label for="pickupLocation">Pickup Location:</label>
+            <input type="text" id="pickupLocation" th:field="*{pickuplocation}" required /><br><br>
+
+            <!-- Branch Select -->
+            <label for="branch">Branch:</label>
+            <select id="branch" th:field="*{branch}">
+                <option value="Branch1">Branch 1</option>
+                <option value="Branch2">Branch 2</option>
+                <option value="Branch3">Branch 3</option>
+                <option value="Branch4">Branch 4</option>
+            </select><br><br>
+
+            <!-- Donation Category -->
+            <label for="donationCategory">Donation Category:</label>
+            <select id="donationCategory" th:field="*{donationcategory}">
+                <option value="Clothes">Clothes</option>
+                <option value="Food">Food</option>
+                <option value="Books">Books</option>
+                <option value="Toys">Toys</option>
+            </select><br><br>
+
+            <!-- Status (Hidden or Not Editable, default is 'Pending') -->
+            <input type="hidden" th:field="*{status}" value="Pending" /><br><br>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Donation</button>
+        </form>
+    </div>
+
+    <script src="DonationForm.js"></script> <!-- Link to your JS file -->
+</body>
+</html>

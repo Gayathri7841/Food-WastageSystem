@@ -1,0 +1,54 @@
+
+
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="AdminHomePage.css"> <!-- Link to your CSS file -->
+    <script src="DonarHomePage.js" defer></script> <!-- Link to your JS file -->
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a th:href="@{/viewAllDonars}">View Donars</a></li>
+            <li><a th:href="@{/viewAllDonations}">View Donations</a></li>
+            <li><a th:href="@{/viewAllRecipients}">View Recipients</a></li>
+             <li>   <a th:href="@{/logout}">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Welcome, <span th:text="${adminName}">Donor</span>!</h1>
+            <!-- Logout Button -->
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+        <div class="content">
+    <div class="stats-container">
+        <div class="stats-box">
+            <h3>Total Donations</h3>
+            <p th:text="${donationCount}">0</p>
+        </div>
+        <div class="stats1-box">
+            <h3>Total Donors</h3>
+            <p th:text="${donarCount}">0</p>
+        </div>
+        <div class="stats1-box">
+            <h3>Total Recipients</h3>
+            <p th:text="${recipientsCount}">0</p>
+        </div>
+         <div class="stats1-box">
+            <h3>Total Donations Accepted</h3>
+            <p th:text="${acceptedDonationsCount}">0</p>
+        </div>
+    </div>
+</div>
+        
+</body>
+</html>
+ 

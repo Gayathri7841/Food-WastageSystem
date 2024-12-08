@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Recipients</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Recipients</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="recipient : ${recipients}">
+                    <td th:text="${recipient.id}"></td>
+                    <td th:text="${recipient.name}"></td>
+                    <td th:text="${recipient.contactno}"></td>
+                    <td th:text="${recipient.email}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/showAdminHome}">Back to Dashboard</a>
+    </div>
+</body>
+</html>

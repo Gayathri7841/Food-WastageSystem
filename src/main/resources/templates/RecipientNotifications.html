@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Notifications</h2>
+<p th:text="${notifications}"></p>
+
+<h2>Donation Report</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Contact No</th>
+            <th>Branch</th>
+            <th>Category ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="donation : ${donations}">
+            <td th:text="${donation.donor.name}"></td>
+            <td th:text="${donation.donor.contactNumber}"></td>
+            <td th:text="${donation.branch}"></td>
+            <td th:text="${donation.categoryId}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

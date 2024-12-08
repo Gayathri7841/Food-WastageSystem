@@ -1,0 +1,134 @@
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #DACAA4; /* Updated Sidebar Background Color */
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    color: #333; /* Dark text for contrast */
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Adjusted for readability */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: #333; /* Match the sidebar text color */
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #B8A68B; /* Slightly darker shade for hover effect */
+    color: white; /* Highlight hover link with white text */
+}
+
+/* Full-Page Background */
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh; /* Ensure it covers the viewport height */
+    font-family: Arial, sans-serif;
+     background-color: #ECE7CA;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px; /* Sidebar width */
+    padding: 20px;
+    background-color: #ECE7CA; /* Updated Main Content Background Color */
+    color: #333; /* Dark text for better visibility */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #333; /* Adjusted for consistency */
+}
+
+.logout-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+.stats-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent for better visibility over the background */
+    border: 1px solid #ddd; /* Corrected border */
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    width: 200px; /* Fixed smaller width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.33% - 20px); /* Allow boxes to take up equal space (with a 20px gap) */
+    min-width: 200px; /* Prevent boxes from shrinking too much */
+}
+
+.stats-box h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333; /* Match text color */
+}
+
+.stats-box p {
+    margin: 10px 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.stats1-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent for better visibility over the background */
+    border: 1px solid #ddd; /* Corrected border */
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px ;
+    width: 200px; /* Fixed smaller width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.33% - 20px); /* Allow boxes to take up equal space (with a 20px gap) */
+    min-width: 200px; /* Prevent boxes from shrinking too much */
+}
+
+.stats1-box h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333; /* Match text color */
+}
+
+.stats1-box p {
+    margin: 10px 0 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+}

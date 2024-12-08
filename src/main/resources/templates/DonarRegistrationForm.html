@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Donor Registration</title>
+    <link rel="stylesheet" href="DonarRegistrationForm.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Donor Registration</h1>
+        <form th:action="@{/DonarRegistration}" method="POST">
+            <h3>Register Here</h3>
+
+            <!-- Email input -->
+            <label for="emailid">Email</label>
+            <input type="email" id="emailid" name="emailid" placeholder="Enter your email" required>
+
+            <!-- Full Name input -->
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+            <!-- Contact Number input -->
+            <label for="contactno">Contact Number</label>
+            <input type="text" id="contactno" name="contactno" placeholder="Enter your contact number" required>
+
+            <!-- Password input -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter a password" required>
+
+            <!-- OTP input -->
+            <label for="otp">OTP</label>
+            <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+
+            <button type="submit">Register</button>
+
+            <div class="info">
+                <p>Already have an account?</p>
+                <a th:href="@{/showLoginForm}">Login</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="DonarRegistrationForm.js"></script> <!-- Link to your JS file -->
+</body>
+</html>
